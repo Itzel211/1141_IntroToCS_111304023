@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1_111304023</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 20px auto;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th[colspan="3"] {
+            text-align: center;
+            font-weight: bold;
+            background-color: #f2f2f2;
+        }
+        img {
+            width: 150px;
+            border: 1px solid #ccc;
+        }
+        textarea {
+            width: 98%;
+            resize: none;
+        }
+        input[type="submit"], input[type="reset"] {
+            margin: 5px;
+            padding: 4px 10px;
+        }
+        .section-title {
+            background-color: #fafafa;
+            font-weight: bold;
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Personal Information</h2>
+
+<form id="infoForm">
+
+    <!-- Requirement #1 -->
+    <table>
+        <!-- 表格標題 -->
+        <tr>
+            <th colspan="3">About — 111304023</th>
+        </tr>
+
+        <!-- 第一列 -->
+        <tr>
+            <!-- 左側照片 (rowspan=3) -->
+            <td rowspan="3" style="text-align:center; width:180px;">
+                <img src="images/myphoto.jpg" alt="personal photo">
+                <p>personal photo</p>
+            </td>
+
+            <!-- Name 與 Gender（Gender 在 Name 下面） -->
+            <td>
+                Name: <input type="text" name="name" value="Itzel"><br><br>
+
+                Gender:
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+                <input type="radio" name="gender" value="other">Other
+            </td>
+
+            <!-- 第三欄空白（保持三欄結構） -->
+            <td></td>
+        </tr>
+
+        <!-- 第二列 -->
+        <tr>
+            <td>
+                County:
+                <select name="county">
+                    <option value="Taipei">Taipei</option>
+                    <option value="Tainan">Tainan</option>
+                    <option value="Taichung">Taichung</option>
+                    <option value="Taoyuan">Taoyuan</option>
+                </select>
+            </td>
+
+            <td>
+                Birthday:
+                <input type="date" name="birthday">
+            </td>
+        </tr>
+
+        <!-- 第三列 -->
+        <tr>
+            <td>
+                E-mail:
+                <input type="email" name="email" placeholder="example@mail.com">
+            </td>
+
+            <td></td> <!-- 保持三欄 -->
+        </tr>
+    </table>
+
+
+
+    <!-- Requirement #2：第二張表格 -->
+    <table>
+        <!-- Row 1 -->
+        <tr>
+            <td class="section-title">Hobby</td>
+            <td>
+                <input type="checkbox" value="Swimming">Swimming
+                <input type="checkbox" value="Volleyball">Volleyball
+                <input type="checkbox" value="Movie">Movie
+                <input type="checkbox" value="Game">Game
+                <input type="checkbox" value="Sleep">Sleep
+            </td>
+        </tr>
+
+        <!-- Row 2 -->
+        <tr>
+            <td class="section-title">Skill</td>
+            <td>
+                <input type="checkbox" value="Java">Java
+                <input type="checkbox" value="HTML">HTML
+                <input type="checkbox" value="Python">Python
+                <input type="checkbox" value="Microsoft Office">Microsoft Office
+                <input type="checkbox" value="Premiere">Premiere
+            </td>
+        </tr>
+
+        <!-- Row 3 -->
+        <tr>
+            <td class="section-title">Say something</td>
+            <td>
+                <textarea rows="3" placeholder="Say something here."></textarea>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Buttons -->
+    <div>
+        <input type="submit" value="提交">
+        <input type="reset" value="重設">
+    </div>
+
+</form>
+<script>
+    const form = document.getElementById("infoForm");
+    const resetBtn = form.querySelector('input[type="reset"]');
+
+    // 按下提交：所有欄位 disabled
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();  // 不跳頁
+        
+        const elements = form.querySelectorAll("input, select, textarea, button");
+        elements.forEach(el => {
+            // 按鈕不要禁用，否則 reset 不會動
+            if (el.type !== "submit" && el.type !== "reset") {
+                el.disabled = true;
+            }
+        });
+    });
+
+    // 按下重設：恢復可編輯
+    resetBtn.addEventListener("click", function() {
+        const elements = form.querySelectorAll("input, select, textarea, button");
+        elements.forEach(el => {
+            el.disabled = false;
+        });
+    });
+</script>
+
+</body>
+</html>
