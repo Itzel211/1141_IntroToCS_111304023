@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>111304023_Portfolio</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            background-color: #f9f6f6; /* 背景柔和白粉 */
+            color: #333;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 40px auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 26px;
+            color: #4a4a4a;
+        }
+        /* 大頭照 */
+        img.profile {
+            width: 220px; /* 放大 */
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        /* 區塊標題底色 */
+        .section-title {
+            background-color: #e0b1b1; /* 莫蘭迪粉 */
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        /* 第一列標題背景 */
+        .header {
+            background-color: #f3dada; /* 淺粉色 */
+        }
+        ul {
+            list-style-type: disc;
+            text-align: left;
+            margin-left: 40px;
+            line-height: 1.6;
+        }
+        a {
+            color: #a25b5b;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 🎵 音樂區塊設定 */
+        .music {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px; /* 圖片間距 */
+            flex-wrap: wrap; /* 適應小螢幕自動換行 */
+            margin-top: 15px;
+        }
+        .music-item {
+            text-align: center;
+        }
+        .music-item img {
+            width: 120px; /* ← 改這裡可控制音樂圖片大小 */
+            height: 120px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .music-item img:hover {
+            transform: scale(1.1);
+        }
+        .music-item span {
+            display: block;
+            margin-top: 8px;
+            font-size: 16px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+
+    <!-- 標題列 -->
+    <tr class="header">
+        <th colspan="4"><h1>歡迎來到 Itzel 的個人作品集</h1></th>
+    </tr>
+
+    <!-- 個人資訊 -->
+    <tr>
+        <td rowspan="4" width="30%">
+            <img src="images/myphoto.jpg" alt="Profile Image" class="profile">
+        </td>
+        <td>姓名</td>
+        <td colspan="2">詹佳恩</td>
+    </tr>
+    <tr>
+        <td>學校</td>
+        <td colspan="2">政治大學</td>
+    </tr>
+    <tr>
+        <td>科系</td>
+        <td colspan="2">統計學系</td>
+    </tr>
+    <tr>
+        <td>年級</td>
+        <td colspan="2">大四</td>
+    </tr>
+
+    <!-- 學習歷程 -->
+    <tr>
+        <th colspan="4" class="section-title">學習歷程</th>
+    </tr>
+    <tr>
+        <td>程式語言</td>
+        <td colspan="3">
+            <ul>
+                <li>Python 基礎</li>
+                <li>Java 基礎</li>
+                <li>HTML 入門</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>修課紀錄</td>
+        <td colspan="3">
+            <ul>
+                <li>計算機概論</li>
+                <li>程式設計</li>
+                <li>資料結構</li>
+                <li>資料庫管理</li>
+                <li>系統分析實務</li>
+                <li>資訊管理</li>
+            </ul>
+        </td>
+    </tr>
+
+    <!-- 作品集 -->
+    <tr>
+        <th colspan="4" class="section-title">作品集</th>
+    </tr>
+    <tr>
+        <td colspan="4" style="text-align: left;">
+            <p><strong>作業連結清單</strong></p>
+            <ul>
+                <li><a href="https://github.com/Itzel211/1141_IntroToCS_111304023/tree/main/HW1_Github">作業 1</a></li>
+                <li><a href="https://github.com/Itzel211/1141_IntroToCS_111304023/tree/main/HW2_DeepDreamGenerator">作業 2</a></li>
+                <li><a href="https://github.com/Itzel211/1141_IntroToCS_111304023/tree/main/HW3_Excel1">作業 3</a></li>
+            </ul>
+
+            <p><strong>我的最愛音樂</strong></p>
+            <div class="music">
+                <div class="music-item">
+                    <a href="https://youtu.be/PzWvQNq_890?si=bJCxPLjBMdiSLE7E" target="_blank">
+                        <img src="images/song1.png" alt="marry me">
+                    </a>
+                    <span>marry me</span>
+                </div>
+                <div class="music-item">
+                    <a href="https://youtu.be/U-bXx_4Nwx8?si=i2lMsWq3fBt9JNsA" target="_blank">
+                        <img src="images/song2.png" alt="戀人">
+                    </a>
+                    <span>戀人</span>
+                </div>
+                <div class="music-item">
+                    <a href="https://youtu.be/4bSeT_9gmJs?si=tQacZu1m9m3gz5Aj" target="_blank">
+                        <img src="images/song3.png" alt="安九">
+                    </a>
+                    <span>安九</span>
+                </div>
+            </div>
+        </td>
+    </tr>
+
+    <!-- 聯絡方式 -->
+    <tr>
+        <th colspan="4" class="section-title">聯絡方式</th>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <p>聯絡我: <a href="mailto:111304023@nccu.edu.tw">111304023@nccu.edu.tw</a></p>
+            <img src="images/nccu.png" alt="School Logo" 
+                style="width:250px; margin-top:10px;"> <!-- ← NCCU LOGO放超大 -->
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>
