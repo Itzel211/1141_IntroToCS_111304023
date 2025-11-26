@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-ComConnect — Prototype</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="images/placeholder.png" alt="logo" class="logo">
+      <h1>E-ComConnect</h1>
+    </div>
+    <nav>
+      <button id="loginBtn" class="btn">登入 / 註冊</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Local sellers. Trusted buys.</h2>
+      <p>體驗 Vibe Coding：快速布景、低程式碼上線。</p>
+      <div class="searchbar">
+        <input id="searchInput" placeholder="搜尋商品或商家..." />
+        <button id="searchBtn" class="btn">搜尋</button>
+      </div>
+    </section>
+
+    <section>
+      <h3>推薦商品</h3>
+      <div id="productGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- Login Modal (簡單模擬) -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="closeModal">&times;</button>
+      <h3>登入 / 註冊</h3>
+      <form id="authForm">
+        <input placeholder="Email" id="email" required />
+        <input placeholder="密碼" type="password" id="password" required />
+        <div class="modal-actions">
+          <button type="submit" class="btn">登入</button>
+          <button type="button" id="switchReg" class="btn secondary">註冊</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

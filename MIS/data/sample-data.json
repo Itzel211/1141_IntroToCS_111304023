@@ -1,0 +1,22 @@
+{
+  "users": [
+    {"id":"u1","name":"小明","email":"xm@example.com","trust_score":92}
+  ],
+  "merchants": [
+    {"id":"m1","name":"BlueBakery","rating":4.7,"description":"在地手作麵包小店"},
+    {"id":"m2","name":"GreenGadgets","rating":4.3,"description":"本地小型電子商品販售"}
+  ],
+  "products": [
+    {"id":"p1","merchantId":"m1","merchantName":"BlueBakery","merchantRating":4.7,"name":"蜂蜜可頌","price":49.9,"status":"available","description":"新鮮烘焙，每日限量","image":"images/placeholder.png"},
+    {"id":"p2","merchantId":"m2","merchantName":"GreenGadgets","merchantRating":4.3,"name":"藍牙耳機 X1","price":899.0,"status":"available","description":"長效電池，本地保固","image":"images/placeholder.png"},
+    {"id":"p3","merchantId":"m2","merchantName":"GreenGadgets","merchantRating":4.3,"name":"充電線 1m","price":129.0,"status":"available","description":"高耐用性, 快充支援","image":"images/placeholder.png"}
+  ],
+  "orders": [],
+  "payments": [],
+  "educationTasks": [
+    {"id":"t1","topic":"如何使用 Vibe Coding","points":10}
+  ],
+  "rewards": [
+    {"id":"r1","type":"coupon","points":20}
+  ]
+}
