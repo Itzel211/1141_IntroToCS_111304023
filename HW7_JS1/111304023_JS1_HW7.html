@@ -3,65 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>StudentID_HW6_1A2B</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    #panel {
-      margin-top: 15px;
-    }
-
-    #record {
-      margin-top: 20px;
-      padding: 10px;
-      border: 1px solid #aaa;
-      border-radius: 5px;
-      min-height: 80px;
-      width: 300px;
-      background: #f8f8f8;
-    }
-
-    input {
-      padding: 6px;
-      width: 120px;
-      font-size: 16px;
-    }
-
-    button {
-      padding: 6px 12px;
-      margin-left: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .item {
-      padding: 4px 0;
-    }
-  </style>
 </head>
 <body>
 
   <h1>StudentID_HW6_1A2B</h1>
 
-  <div id="panel">
-    <input id="userInput" type="text" placeholder="輸入4位數">
-    <button onclick="play()">Guess</button>
-  </div>
+  <input id="userInput" type="text" placeholder="輸入4位數">
+  <button onclick="play()">Guess</button>
 
   <div id="record">
-    <b>猜測紀錄：</b><br>
+    <br>猜測紀錄：<br>
   </div>
 
   <script>
-    // ========= 產生不重複的四位數 =========
+    // =============================
+    // 產生不重複的 4 位數答案
+    // =============================
     function generateAnswer() {
       let digits = [0,1,2,3,4,5,6,7,8,9];
       let ans = "";
@@ -69,7 +26,7 @@
       while (ans.length < 4) {
         let idx = Math.floor(Math.random() * digits.length);
         ans += digits[idx];
-        digits.splice(idx, 1);  // 移除已使用的數字
+        digits.splice(idx, 1);
       }
       return ans;
     }
@@ -77,22 +34,27 @@
     let answer = generateAnswer();
     let count = 0;
 
-    console.log("Debug Answer = " + answer); // 可刪除
+    console.log("Debug Answer = " + answer); // 交作業前可移除
 
-    // ========= 驗證輸入（4位、全部數字、不可重複） =========
+    // =============================
+    // 驗證輸入
+    // =============================
     function isValid(str) {
       if (str.length !== 4) return false;
       if (!/^\d{4}$/.test(str)) return false;
 
       let set = new Set(str.split(""));
-      if (set.size !== 4) return false; // 檢查是否重複
+      if (set.size !== 4) return false;
 
       return true;
     }
 
-    // ========= 計算 A 與 B =========
+    // =============================
+    // 計算 A / B
+    // =============================
     function checkAB(guess, ans) {
-      let A = 0, B = 0;
+      let A = 0;
+      let B = 0;
 
       for (let i = 0; i < 4; i++) {
         if (guess[i] === ans[i]) {
@@ -101,17 +63,18 @@
           B++;
         }
       }
-
       return `${A}A${B}B`;
     }
 
-    // ========= 主要流程 =========
+    // =============================
+    // 主遊戲流程
+    // =============================
     function play() {
       let inputField = document.getElementById("userInput");
       let guess = inputField.value.trim();
-      
+
       if (!isValid(guess)) {
-        alert("輸入錯誤！請輸入 4 位「不重複」的數字。");
+        alert("輸入錯誤！請輸入 4 位不重複的數字。");
         return;
       }
 
@@ -119,16 +82,14 @@
 
       let result = checkAB(guess, answer);
 
-      // 新增紀錄到畫面
       document.getElementById("record").innerHTML +=
-        `<div class='item'>${count}. ${guess} → ${result}</div>`;
+        count + ". " + guess + " → " + result + "<br>";
 
-      // 若猜對
       if (result === "4A0B") {
         alert("恭喜答對！你總共猜了 " + count + " 次。");
       }
 
-      inputField.value = "";  // 清空輸入
+      inputField.value = "";
       inputField.focus();
     }
   </script>
