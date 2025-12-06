@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>StudentID_Number Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #result img {
+      width: 250px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>StudentID_Number Guessing Game</h1>
+
+  <div id="result"></div>
+
+  <script>
+    // ---- 隨機答案 1~100 ----
+    var answer = Math.floor(Math.random() * 100) + 1;
+    var chances = 7;  // 最大嘗試次數
+    var min = 1;
+    var max = 100;
+
+    while (chances > 0) {
+
+      // ---- 提示目前範圍與剩餘次數 ----
+      var input = window.prompt(
+        "請輸入一個數字 (" + min + " ~ " + max + ")\n" +
+        "剩餘次數：" + chances
+      );
+
+      // ---- 檢查是否按取消 ----
+      if (input === null) {
+        alert("遊戲已取消");
+        break;
+      }
+
+      // ---- 去除空白 ----
+      input = input.trim();
+
+      // ---- 輸入驗證 ----
+      if (input === "" || isNaN(input)) {
+        alert("請輸入有效的數字！");
+        continue;
+      }
+
+      var guess = Number(input);
+
+      if (guess < 1 || guess > 100) {
+        alert("數字必須介於 1 到 100 之間");
+        continue;
+      }
+
+      // ---- 開始比大小 ----
+      if (guess === answer) {
+        alert("恭喜你答對了！");
+        document.getElementById("result").innerHTML =
+          '<img src="images/correct.jpg">';
+        break;
+      } else if (guess < answer) {
+        alert("再大一點！");
+        min = Math.max(min, guess + 1);
+      } else {
+        alert("再小一點！");
+        max = Math.min(max, guess - 1);
+      }
+
+      chances--;
+
+      // ---- 次數用完 ----
+      if (chances === 0) {
+        alert("很可惜，答案是：" + answer);
+        document.getElementById("result").innerHTML =
+          '<img src="images/wrong.jpg">';
+      }
+    }
+  </script>
+
+</body>
+</html>
