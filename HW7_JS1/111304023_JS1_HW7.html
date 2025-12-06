@@ -12,7 +12,7 @@
   <button onclick="play()">Guess</button>
 
   <div id="record">
-    <br>猜測紀錄：<br>
+    <br>Game Record：<br>
   </div>
 
   <script>
@@ -34,7 +34,7 @@
     let answer = generateAnswer();
     let count = 0;
 
-    console.log("Debug Answer = " + answer); // 交作業前可移除
+    //console.log("Debug Answer = " + answer); 
 
     // =============================
     // 驗證輸入
@@ -83,7 +83,7 @@
       let result = checkAB(guess, answer);
 
       document.getElementById("record").innerHTML +=
-        count + ". " + guess + " → " + result + "<br>";
+        "第" + count + "次：" + guess + " → " + result + "<br>";
 
       if (result === "4A0B") {
         alert("恭喜答對！你總共猜了 " + count + " 次。");
