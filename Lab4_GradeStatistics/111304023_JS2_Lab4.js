@@ -13,7 +13,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
 
     const row = `
       <tr>
-        <td>${index}</td>        <!-- 新增 index -->
+        <td>${index}</td>     
         <td>${math}</td>
         <td>${eng}</td>
         <td>${avg}</td>

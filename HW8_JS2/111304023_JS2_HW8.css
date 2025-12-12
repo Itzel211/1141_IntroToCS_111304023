@@ -1,9 +1,62 @@
 body {
-  font-family: Arial;
-  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  width: 330px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+label {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 input, select {
-  margin: 5px;
-  padding: 5px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background: #8b5a2b;     /* 咖啡色按鈕 */
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #73481f;
+}
+
+#result {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 25px;
 }
