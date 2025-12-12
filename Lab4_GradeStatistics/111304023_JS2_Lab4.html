@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>111304023_JS2_Lab4</title> 
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Grade Statistics</h2>
+
+  <label>Math: 
+    <input type="number" id="mathInput">
+  </label>
+
+  <label>English: 
+    <input type="number" id="engInput">
+  </label>
+
+  <button id="submitBtn">Submit</button>
+
+  <table id="gradeTable" border="1">
+    <thead>
+      <tr>
+        <th>Math</th>
+        <th>English</th>
+        <th>Average</th>
+      </tr>
+    </thead>
+
+    <tbody id="gradeBody">
+      <!-- 新增的行會插入這裡 -->
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td id="avgMath">0</td>
+        <td id="avgEng">0</td>
+        <td id="overallAvg">0</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
