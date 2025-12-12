@@ -1,3 +1,5 @@
+let index = 1;   // 自動編號
+
 document.getElementById("submitBtn").addEventListener("click", function () {
     const math = Number(document.getElementById("mathInput").value);
     const eng = Number(document.getElementById("engInput").value);
@@ -11,6 +13,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
 
     const row = `
       <tr>
+        <td>${index}</td>        <!-- 新增 index -->
         <td>${math}</td>
         <td>${eng}</td>
         <td>${avg}</td>
@@ -18,6 +21,8 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     `;
 
     document.getElementById("gradeBody").insertAdjacentHTML("beforeend", row);
+
+    index++; //  下一次 +1
 
     updateColumnAverages();
 });
@@ -28,8 +33,8 @@ function updateColumnAverages() {
     let totalEng = 0;
 
     rows.forEach(r => {
-        totalMath += Number(r.children[0].textContent);
-        totalEng += Number(r.children[1].textContent);
+        totalMath += Number(r.children[1].textContent);  // 位置調整
+        totalEng += Number(r.children[2].textContent);
     });
 
     const count = rows.length;

@@ -3,13 +3,24 @@ body {
   padding: 20px;
 }
 
+input {
+  padding: 6px;
+  margin: 5px;
+}
+
 table {
   margin-top: 20px;
-  width: 300px;
+  width: 100%;            /* 滿版 */
   border-collapse: collapse;
+  font-size: 16px;
 }
 
 th, td {
-  padding: 6px;
+  padding: 10px;
   text-align: center;
 }
+
+tfoot td {
+  font-weight: bold;
+}
+

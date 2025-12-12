@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>111304023_JS2_Lab4</title> 
-  <link rel="stylesheet" href="111304023_JS2_Lab4.css"> 
+  <title>111304023_JS2_Lab4</title>
+  <link rel="stylesheet" href="111304023_JS2_Lab4.css">
 </head>
 <body>
 
   <h2>Grade Statistics</h2>
 
   <label>Math: 
-    <input type="number" id="mathInput">
+    <input type="number" id="mathInput" placeholder="Enter Math score">
   </label>
 
   <label>English: 
-    <input type="number" id="engInput">
+    <input type="number" id="engInput" placeholder="Enter English score">
   </label>
 
   <button id="submitBtn">Submit</button>
@@ -22,6 +22,7 @@
   <table id="gradeTable" border="1">
     <thead>
       <tr>
+        <th>#</th>  
         <th>Math</th>
         <th>English</th>
         <th>Average</th>
@@ -32,6 +33,7 @@
 
     <tfoot>
       <tr>
+        <td>Average</td>
         <td id="avgMath">0</td>
         <td id="avgEng">0</td>
         <td id="overallAvg">0</td>
@@ -39,6 +41,6 @@
     </tfoot>
   </table>
 
-  <script src="111304023_JS2_Lab4.js"></script> 
+  <script src="111304023_JS2_Lab4.js"></script>
 </body>
 </html>
